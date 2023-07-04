@@ -1,0 +1,27 @@
+{
+  "name": "festivalmusica_inicio",
+  "version": "1.0.0",
+  "description": "Proyecto con Gulp, SASS y HTML",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass src/scss:build/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ValentinaAltamirano/ProyectoFestivalMusica.git"
+  },
+  "keywords": [
+    "SASS",
+    "Gulp",
+    "HTML"
+  ],
+  "author": "Valentina Altamirano",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ValentinaAltamirano/ProyectoFestivalMusica/issues"
+  },
+  "homepage": "https://github.com/ValentinaAltamirano/ProyectoFestivalMusica#readme",
+  "devDependencies": {
+    "sass": "^1.63.6"
+  }
+}
