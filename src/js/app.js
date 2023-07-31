@@ -3,16 +3,40 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 function iniciarApp(){
+    navegacionFija();
     crearGaleria();
     scrollNav();
 }
 
-function scrollNav(){
-    const enlaces = document.querySelector('.navegacion-principal a');
+function navegacionFija(){
+    const barra = document.querySelector('.header');
+    const sobreFestival = document.querySelector('.sobre-festival')
+    const body = document.querySelector('body');
 
+    window.addEventListener('scroll', function(){
+        const info = sobreFestival.getBoundingClientRect() // info sobre el elemento
+
+        if( sobreFestival.getBoundingClientRect().bottom < 0) {
+            barra.classList.add('fijo')
+            barra.classList.add('body-scroll')
+        } else{
+            barra.classList.remove('fijo')
+            barra.classList.remove('body-scroll')
+        }
+    });
+}
+
+function scrollNav(){
+    const enlaces = document.querySelectorAll('.navegacion-principal a');
+    
     enlaces.forEach( enlace => {
         enlace.addEventListener('click', function(e){
-            console.log(e.target.attributes.href.value)
+            e.preventDefault();
+
+            const seccionScroll  = e.target.attributes.href.value;
+            const seccion = document.querySelector(seccionScroll);
+            seccion.scrollIntoView({ behavior: "smooth"})
+
             
         });
     });
